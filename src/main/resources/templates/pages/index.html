@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf">
+
+<head>
+  <th:block th:replace="fragments/metadata"/>
+  <title>DGB - Article Management System</title>
+  <!-- MDB icon -->
+  <th:block th:replace="fragments/style"/>
+</head>
+
+<body>
+
+<!-- Start your project here-->
+<!-- Navbar -->
+<div th:replace="fragments/navbar::navbar"></div>
+<!-- Navbar -->
+
+<!--Carousel Wrapper-->
+
+  <!--Slides-->
+  <div th:replace="fragments/slide::slide"></div>
+  <!--/.Slides-->
+
+  <!--Controls-->
+
+<!--/.Carousel Wrapper-->
+
+<!--Main layout-->
+<main>
+  <div class="container">
+
+    <!--Section: Main info-->
+    <section th:fragment="Recently-Post" class="mt-5 wow fadeIn">
+
+      <h2 class="h1 text-left my-5 font-weight-bold">Recently Post</h2>
+
+      <!--Grid row-->
+      <div class="row">
+        <div class="col-md-4" th:each="recentArticle: ${recentArticles}" th:object="${recentArticle}">
+          <!--Zoom effect-->
+          <div class="view overlay zoom">
+            <img th:src="@{/images/{name}(name=${recentArticle.thumbnail})}" class="img-fluid "
+                 alt="zoom">
+            <div class="mask flex-center waves-effect waves-light pl-2 pr-2">
+              <p class="white-text text-center font-weight-bold" th:text="*{title}">Title</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <hr class="my-5">
+
+  <div th:replace="fragments/most-popular::Most-Popular"></div>
+  <div th:replace="fragments/related-category::Related-Category"></div>
+
+  </div>
+</main>
+<!--Main layout-->
+
+<!--Footer-->
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+  <!--Call to action-->
+  <div class="pt-4">
+    <a class="btn btn-outline-white" href="https://mdbootstrap.com/getting-started/" target="_blank"
+       role="button">Download
+      MDB
+      <i class="fas fa-download ml-2"></i>
+    </a>
+    <a class="btn btn-outline-white" href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank"
+       role="button">Start
+      free tutorial
+      <i class="fas fa-graduation-cap ml-2"></i>
+    </a>
+  </div>
+  <!--/.Call to action-->
+
+  <hr class="my-4">
+
+  <!-- Social icons -->
+  <div class="pb-4">
+    <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+      <i class="fab fa-facebook-f mr-3"></i>
+    </a>
+
+    <a href="https://twitter.com/MDBootstrap" target="_blank">
+      <i class="fab fa-twitter mr-3"></i>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+      <i class="fab fa-youtube mr-3"></i>
+    </a>
+
+    <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+      <i class="fab fa-google-plus-g mr-3"></i>
+    </a>
+
+    <a href="https://dribbble.com/mdbootstrap" target="_blank">
+      <i class="fab fa-dribbble mr-3"></i>
+    </a>
+
+    <a href="https://pinterest.com/mdbootstrap" target="_blank">
+      <i class="fab fa-pinterest mr-3"></i>
+    </a>
+
+    <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+      <i class="fab fa-github mr-3"></i>
+    </a>
+
+    <a href="http://codepen.io/mdbootstrap/" target="_blank">
+      <i class="fab fa-codepen mr-3"></i>
+    </a>
+  </div>
+  <!-- Social icons -->
+
+  <!--Copyright-->
+  <div class="footer-copyright py-3">
+    © 2018 Copyright:
+    <a href="https://mdbootstrap.com/bootstrap-tutorial/" target="_blank"> MDBootstrap.com </a>
+  </div>
+  <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
+
+<!-- End your project here-->
+
+<!-- jQuery -->
+
+<th:block th:replace="fragments/script"/>
+</body>
+
+</html>

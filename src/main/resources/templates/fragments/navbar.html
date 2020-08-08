@@ -1,8 +1,18 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<nav th:fragment="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
     <div class="container">
 
         <!-- Brand -->
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" th:href="@{/}">
             <strong>DGB</strong>
         </a>
 
@@ -18,12 +28,12 @@
             <!-- Left -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="article.html">Articles
+                    <a class="nav-link" th:href="@{/articles}">Articles
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="category.html" target="_blank">Categories</a>
+                    <a class="nav-link" th:href="@{/categories}" target="_blank">Categories</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" target="_blank">Contact Us</a>
@@ -60,3 +70,5 @@
 
     </div>
 </nav>
+</body>
+</html>
