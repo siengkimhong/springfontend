@@ -10,7 +10,9 @@ import java.util.List;
 
 public interface ArticleApi {
 
-    @GET("articles/recent/3")
+    @GET("articles/recent")
     Call<ApiResponse<List<Article>>> getRecentArticles();
 
+    @GET("articles/popular")
+    Call<ApiResponse<List<Article>>> getPopularArticle();
 }

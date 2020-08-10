@@ -11,6 +11,10 @@
 
 <body>
 <div th:replace="fragments/navbar::navbar"></div>
+<div layout:fragment="slide"
+     id="carousel-example-1z"
+     class="carousel slide carousel-fade"
+     data-ride="carousel"></div>
 <main>
     <div class="container" layout:fragment="Content">
         <!-- RENDER CONTENT HERE -->
@@ -80,5 +84,6 @@
 
 </footer>
 <th:block th:replace="fragments/script"/>
+<th:block layout:fragment="scripts"></th:block>
 </body>
 </html>
