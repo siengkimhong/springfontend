@@ -28,6 +28,7 @@ public class ArticleService {
         ArticleApi articleApi = ApiGenerator.createService(ArticleApi.class);
         ApiResponse<List<Article>> articlePopularResponse = new ApiResponse<>();
         try {
+
             articlePopularResponse = articleApi.getPopularArticle().execute().body();
         } catch (IOException e) {
             e.printStackTrace();
